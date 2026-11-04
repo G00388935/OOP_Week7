@@ -1,17 +1,37 @@
 package ie.atu;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
+
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner input = new Scanner(System.in);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+         System.out.println("What is the name of your Workshop");
+         String workshopName = input.nextLine();
+
+         System.out.println("How big is the capacity?");
+         int capacity = Integer.parseInt(input.nextLine());
+
+         System.out.println("How many registrations do you want?");
+         int registrations = Integer.parseInt(input.nextLine());
+
+         Workshop workshop = new Workshop(workshopName, capacity);
+         System.out.println(workshop);
+
+         //System.out.println("workshop name: "+workshopName);//testing code
+         //System.out.println("Capacity: "+capacity);// testing code
+
+
+         System.out.println("Number of registration attempts: "+registrations);
+         for (int i = 1; i <= registrations; i++)
+         {
+             System.out.println("Registration #"+i);
+
+             //String studentIds  = input.nextLine();
+             //hash set wont add the same registration more than once
+         }
+
+
     }
 }
